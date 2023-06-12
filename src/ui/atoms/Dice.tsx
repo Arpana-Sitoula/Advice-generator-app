@@ -1,9 +1,12 @@
 import { Box, Circle, Image } from "@chakra-ui/react";
 import dice from "../../assets/img/icon-dice.svg";
 
-const Dice = () => {
+interface DiceProps {
+  onClick: any;
+}
+const Dice = ({ onClick }: DiceProps) => {
   return (
-    <Box cursor="pointer">
+    <Box cursor="pointer" onClick={onClick}>
       <Circle size="50px" bg="green.300">
         <Image src={dice} boxSize="20px" />
       </Circle>

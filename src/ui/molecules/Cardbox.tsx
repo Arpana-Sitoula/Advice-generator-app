@@ -22,6 +22,11 @@ const Cardbox = () => {
     queryFn: fetchAdvice,
   });
 
+  const onClickHandle = () => {
+    fetchData;
+    console.log(fetchData);
+  };
+
   if (fetchData.isError) return <h1>Error loading data</h1>;
   if (fetchData.isLoading) return <h1>Loading.......</h1>;
 
@@ -37,7 +42,7 @@ const Cardbox = () => {
       </Center>
       <Divider />
       <Center>
-        <Dice />
+        <Dice onClick={onClickHandle} />
       </Center>
       {adviceObj.slip.id}
     </Card>
