@@ -24,7 +24,8 @@ const Cardbox = () => {
 
   const onClickHandle = () => {
     fetchData;
-    console.log(fetchData);
+    if (fetchData.isFetching) return <h1>Fetching....</h1>;
+    console.log(fetchData.data);
   };
 
   if (fetchData.isError) return <h1>Error loading data</h1>;
@@ -33,7 +34,7 @@ const Cardbox = () => {
   const adviceObj = fetchData.data;
 
   return (
-    <Card position="relative" bg="gray.600">
+    <Card position="relative" bg="gray.600" width="400px">
       <Center>
         <AdviceId id={adviceObj?.slip?.id} />
       </Center>
@@ -44,7 +45,6 @@ const Cardbox = () => {
       <Center>
         <Dice onClick={onClickHandle} />
       </Center>
-      {adviceObj.slip.id}
     </Card>
   );
 };

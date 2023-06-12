@@ -5,7 +5,11 @@ interface IdProps {
 }
 
 const AdviceId = ({ id }: IdProps) => {
-  return <Text color="green.300">{id}</Text>;
+  return (
+    <Text color="green.300" m="2">
+      ADVICE #{id}
+    </Text>
+  );
 };
 
 export default AdviceId;
